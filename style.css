@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'cairo';
+    text-transform: capitalize;
+}
+
+header {
+    padding: 10px;
+    background-color: aliceblue;
+    color: #3cabc5;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+button {
+    all: unset;
+}
+
+header button {
+    cursor: pointer;
+    font-weight: bold;
+    transform: scale(1);
+    animation-name: big;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+aside {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 10px;
+    background-color: #3cabc5;
+    border-radius: 5px;
+}
+
+aside ul {
+    list-style: none;
+    margin: 10px;
+}
+
+aside ul li {
+    margin: 20px 0;
+    color: aliceblue;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    padding: 10px;
+}
+
+aside ul li:hover {
+    color: #3cabc5;
+    background-color: #eee;
+    border-radius: 20px;
+}
+
+aside button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: bold;
+    color: #6309a9;
+    cursor: pointer;
+}
+
+@keyframes big {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.show {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-name: show;
+    animation-duration: 0.2s;
+}
+
+@keyframes show {
+    0% {
+        position: absolute;
+        left: -300px;
+        top: 0;
+    }
+    100% {
+        position: absolute;
+        left: 0px;
+        top: 0;
+    }
+}
+
+.hide {
+    display: block;
+    position: absolute;
+    left: -400px;
+    top: 0;
+    animation-name: hide2;
+    animation-duration: 0.2s;
+}
+
+
+@keyframes hide2 {
+    0% {
+        position: absolute;
+        left: 0px;
+        top: 0;
+    }
+    100% {
+        position: absolute;
+        left: -400px;
+        top: 0;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    aside {
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+    .hide {
+        display: block;
+        position: absolute;
+        left: -600px;
+        top: 0;
+        animation-name: hide2;
+        animation-duration: 0.2s;
+    }
+    
+    
+    @keyframes hide2 {
+        0% {
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+        100% {
+            position: absolute;
+            left: -600px;
+            top: 0;
+        }
+    }
+}
